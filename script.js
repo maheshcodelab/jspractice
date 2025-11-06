@@ -55,19 +55,51 @@
 
 
 // Handlaing Invalid Input by user 
-let age = prompt("Enter your age:");
-if (age === null) {
-    console.error(" you pressed cancel");
-}
-else if (age.trim() === "") {
-    console.error("Bhaiya sahi se likh le");
-}
-else {
-    age = Number(age.trim());
-    if (isNaN(age)) {
-        console.error(" Bhai number likh le");
-    }
-    else {
-        console.log(`Your age is ${age}`);
-    }
-}
+// let age = prompt("Enter your age:");
+// if (age === null) {
+//     console.error(" you pressed cancel");
+// }
+// else if (age.trim() === "") {
+//     console.error("Bhaiya sahi se likh le");
+// }
+// else {
+//     age = Number(age.trim());
+//     if (isNaN(age)) {
+//         console.error(" Bhai number likh le");
+//     }
+//     else {
+//         console.log(`Your age is ${age}`);
+//     }
+// }
+
+//  8 Print multiplication table of 5
+//  for (let i = 1; i < 11; i++) {
+//     console.log(`5 x ${i} = ${5 * i}`);
+//  }
+
+// 9 Count how many numbers between 1 and 15 are greater than 8  //Loop and count conditionally.
+// let count = 0;
+// for ( let i = 1; i < 16; i++) {
+//     if (i > 8) {
+//         count++;
+//         console.log(i);
+//     }
+// }
+// console.log(`${count} numbers are greater than 8 between 1 and 15.`);
+
+
+//10. Ask user for password and print access status
+
+// let password = "harsh"
+// let pasInput = prompt("Enter your password:");
+
+// if (pasInput === null) {
+//     console.erroe("you cencelles it");
+// }
+// else if(pasInput === password ){
+//     console.log("matched");
+// }
+// else {
+//     console.log("not matched");
+// }
+
