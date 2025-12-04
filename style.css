@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: monospace;
 }
 
 html,
@@ -12,32 +12,86 @@ body {
 }
 
 body {
-  background-color: black;
+  background-color: #11141a; 
   color: white;
-  overflow: hidden;
 }
 
 main {
   height: 100%;
   width: 100%;
-  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9;
+/* Card */
+.box {
+  
+  width: 500px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Progress bar background */
+.inner {
+  height: 18px;
+  width: 100%;
+  margin: 30px auto 20px;
+  background-color: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Progress  */
+.innerbar {
+  height: 100%;
+  width: 0%; 
+  border-radius: 20px;
+  background-color: #15803d;
+}
+
+/* Bottom */
+.box2 {
+  
+  width: 100%;
+  padding: 10px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Percentage  */
+.box2 h1 {
+  color: #111827;
+  font-size: 44px;
+}
+
+/* Button */
+.box2 button {
+  height: fit-content;
   padding: 10px 20px;
-  background-color: rgb(0, 38, 108);
+  border-radius: 10px;
   border: none;
-  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #16a34a;
+  color: #f9fafb;
   cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-size: 20px;
+  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
-button:active {
-  scale: 0.95;
+.box2 button:hover {
+  background-color: #15803d;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(22, 163, 74, 0.671);
 }
+
+.box2 button:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.85);
+}
+
+

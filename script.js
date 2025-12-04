@@ -1,56 +1,29 @@
-let main = document.querySelector('main');
+let count = 0;
+
 let btn = document.querySelector('button');
+let h1 = document.querySelector('h1');
+let inner = document.querySelector('.innerbar');
+
 
 btn.addEventListener('click', function () {
 
-    let arr = [
-  "Code wins arguments.",
-  "It works on my machine.",
-  "Always be coding.",
-  "Debugging is detective work.",
-  "Keep it simple, stupid (KISS).",
-  "The best code is no code.",
-  "Refactor early, refactor often.",
-  "Syntax errors are job security.",
-  "Coffee is a developer's fuel.",
-  "Write self-documenting code.",
-  "Commit often, push rarely.",
-  "Don't repeat yourself (DRY).",
-  "The compiler is your friend.",
-  "Read the documentation.",
-  "Version control saves lives.",
-  "Automate the boring stuff.",
-  "Done is better than perfect.",
-  "Learning never stops.",
-  "Think before you code.",
-  "Sleep is just a code-compile cycle."
-]   
+  let num = 50 + Math.floor(Math.random()*50);
+  
 
-let ar = Math.floor(Math.random()*arr.length)
-console.log(arr[ar]);
-    
+  let int = setInterval(function () {
+    count++;
+    h1.innerHTML = count + '%';
+    btn.innerHTML = 'Downloading...';
+    inner.style.width = count + '%';
+    btn.style.pointerEvents = 'none'
 
+  }, num);
 
-    let h1 = document.createElement('h1');
-    h1.innerHTML = arr[ar];
-    main.appendChild(h1)
-
-    let c1 = Math.random() * 256
-    let c2 = Math.random() * 256
-    let c3 = Math.random() * 256
-    let x = Math.random() * 100
-    let y = Math.random() * 100
-    let rot = Math.random() * 360
-    let scl = Math.random() * 3
-
-    h1.style.top = x+'%'
-    h1.style.left = y+'%'
-    h1.style.position = 'absolute'
-    h1.style.rotate = rot+'deg'
-    h1.style.scale = (scl)
-    h1.style.color = `rgb(${c1},${c2},${c3})`
-    
+  setTimeout(() => {
+    clearInterval(int);
+    btn.innerHTML = 'Downloaded';
+    btn.style.pointerEvents = 'none'
+    console.log('Downloaded in ', num/10 , 'seconds')
+  }, num*100);
 
 })
-
-
