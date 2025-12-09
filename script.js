@@ -3,6 +3,7 @@ let count = 0;
 let btn = document.querySelector('button');
 let h1 = document.querySelector('h1');
 let inner = document.querySelector('.innerbar');
+let h3 = document.querySelector('h3');
 
 
 btn.addEventListener('click', function () {
@@ -23,7 +24,7 @@ btn.addEventListener('click', function () {
     clearInterval(int);
     btn.innerHTML = 'Downloaded';
     btn.style.pointerEvents = 'none'
-    console.log('Downloaded in ', num/10 , 'seconds')
+    h3.innerHTML =`Downloaded in ${num/10} seconds`
   }, num*100);
 
 })
