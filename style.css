@@ -1,102 +1,65 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   width: 100%;
 }
 
 body {
-  background-color: #11141a; 
-  color: white;
-}
-
-main {
-  height: 100%;
-  width: 100%;
+  background-color: rgb(13, 11, 27);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Card */
-.box {
-  
-  width: 500px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px 24px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-}
-
-/* Progress bar background */
-.inner {
-  height: 18px;
-  width: 100%;
-  margin: 30px auto 20px;
-  background-color: #e5e7eb;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-/* Progress  */
-.innerbar {
-  height: 100%;
-  width: 0%; 
-  border-radius: 20px;
-  background-color: #15803d;
-}
-
-/* Bottom */
-.box2 {
-  
-  width: 100%;
-  padding: 10px 4px;
+.main {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
-/* Percentage  */
-.box2 h1 {
-  color: #111827;
-  font-size: 44px;
+.card {
+  position: relative;          /* important for absolute icon */
+  height: 500px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Button */
-.box2 button {
-  height: fit-content;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  font-size: 18px;
-  font-weight: 700;
-  background-color: #16a34a;
-  color: #f9fafb;
-  cursor: pointer;
-  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.45);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.box2 button:hover {
-  background-color: #15803d;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(22, 163, 74, 0.671);
+/* Heart icon */
+.card i{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 80px;
+  color: transparent;
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAwAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAwECBf/EABoQAQEBAQEBAQAAAAAAAAAAAAAREgFhAlH/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQMEBgL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAEhET/9oADAMBAAIRAxEAPwD36VLRp4PHssVrNJ0phitKlTRhitKlSmGK0qVKYYrSpU0YYrSpaNJhitKlo0YmK0qWjRhitKlo0YYrSpXpemGK0qV6Xphieio6NNpbSreF4lo0smK3heJaNEmK3hUtFJJVpUqX1JJVpUtel9JJVpUr6a9JJVpUr63RJKlKnSrJKlbpKlJSVdNqOjSSSrSpaNJJKOuGuI6NN5bytrhpHXpr0klbRriOvSkkraNI6NEkraNI6NErK2jXqOm6JTFdGkdGiTFtGkdGiTFtemvUdGiTFtemvUdN0SmK69bfUdGjDFtGkdG0kxCmk9Gm+N5U0aT0aXCVNN0lo0SSpptS0aMJVpz6S0aTCVdFS0aMJV59N0lpmjExWlS0aJWVa2paNEpitZU9GjDFaaSpSTFdFSpUkxKsqd9ZW+NsVpUtGiUxas0lo0SYro0lo0SuK6NJaNEmK6NJabolMU02pU0Ysq0vqWjRhit9L6lSmJit9KlTRJiujSWjRJiujSVNEmJ6NI6NN5a4to0jo0SYteGkdGiTFtGkdHPokxbRUtGiTFayp6NEmK0qWjRJitOdS0bJMWppHZolMW1w1xHRokxbXDXEdGkkxbXDXEdGlkxGlT0adUtFKVPRokUpU9GiRSlT0aJFKVPRokd1uk6VJFNHOp0pIpSp0pIpSp0pIpSp0pApSp0pApSp00SJaNJ0rrgU0VxSpA7pXFKsDulcUpA7pXFKQO76X1xSkDulcUpA7vrefSdKQO6X1xSkDu+l9cUqQO76X1xSkDu+tqdKQJlc1tdUDb0rnnW0gdUrm8ZSB3SuaykDulcUpA7pXNLwgdUritIHVK5CB1SuQgdUrmhA6pXNKQOqVzSkDIQHTIQjRJGQjQkZCNCRkI0JGQg0kZBoSMINJGT0nf1rCQg0JGEaEjBoSNGwjph865HUISawbCEmsGwhJrkdQhJrBsISaxjqEJNYx1CEmsGwhJrBsISawbCEmsGwiSaDB1y57aMCFtowSC2jAgtowILaMpSC2jKUg6NGFIOjRgQW0ZQhbaMpSC2jKUgt/9k=);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0) rotate(-70deg);
+  transition: all 0.4s cubic-bezier(.82,1.07,.5,1.61); 
+  pointer-events: none;
 }
 
-.box2 button:active {
-  transform: translateY(1px) scale(0.97);
-  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.85);
+/* When JS adds this class */
+#love.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
-
-
-h3{
-  color: black;
-  text-align: center;
-}
-

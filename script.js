@@ -1,30 +1,21 @@
-let count = 0;
-
-let btn = document.querySelector('button');
-let h1 = document.querySelector('h1');
-let inner = document.querySelector('.innerbar');
-let h3 = document.querySelector('h3');
+let img = document.querySelector('img')
+let i = document.querySelector('#love')
 
 
-btn.addEventListener('click', function () {
+img.addEventListener('dblclick', function(){
+    i.style.opacity = '1';
+    i.style.transform = 'translate(-50%, -50%) scale(1) rotate(0deg)';
 
-  let num = 50 + Math.floor(Math.random()*50);
-  
-
-  let int = setInterval(function () {
-    count++;
-    h1.innerHTML = count + '%';
-    btn.innerHTML = 'Downloading...';
-    inner.style.width = count + '%';
-    btn.style.pointerEvents = 'none'
-
-  }, num);
-
-  setTimeout(() => {
-    clearInterval(int);
-    btn.innerHTML = 'Downloaded';
-    btn.style.pointerEvents = 'none'
-    h3.innerHTML =`Downloaded in ${num/10} seconds`
-  }, num*100);
-
+    setTimeout(function() {
+        i.style.transform = 'translate(-50%, -400%) scale(1) rotate(90deg)';
+    }, 800);
+    
+    setTimeout(function() {
+        i.style.opacity = '0';
+        
+    }, 1000);
+    setTimeout(function() {
+       
+        i.style.transform = 'translate(-50%, -50%) scale(0) rotate(0deg)'
+    }, 1200);
 })
