@@ -1,39 +1,33 @@
-let sounds = [
-  "music/28.mp3",
-  "music/29.mp3",
-  "music/30.mp3",
-  "music/31.mp3",
-  "music/32.mp3",
-  "music/33.mp3",
-  "music/34.mp3",
-  "music/35.mp3",
-  "music/36.mp3",
-  "music/37.mp3",
-  "music/38.mp3",
-  "music/39.mp3"
-];
+// let allElem = document.querySelectorAll('.elem');
 
-let keys = document.querySelectorAll(".key");
-
-function playSound(key) {
-  let index = key.dataset.sound;
-  let audio = new Audio(sounds[index]);
-  audio.currentTime = 0;
-  audio.play();
-
-  key.classList.add("active");
-  setTimeout(() => {
-    key.classList.remove("active");
-  }, 120);
-}
+// allElem.forEach(function(elem){
+//  elem.childNodes[3].addEventListener('click', function(){
+//     if(elem.childNodes[3].innerHTML == 'Add Freind'){
+//         elem.childNodes[3].innerHTML = 'Remove Freind'
+//     }
+//     else{
+//         elem.childNodes[3].innerHTML = 'Add Freind'
+//     }
+//  })
+// })
 
 
-keys.forEach(key => {
-  key.addEventListener("click", () => playSound(key));
-});
+let allBtn = document.querySelectorAll('button');
 
-
-document.addEventListener("keydown", (e) => {
-  let key = document.querySelector(`.key[data-key="${e.code}"]`);
-  if (key) playSound(key);
-});
+allBtn.forEach(function(elem){
+    elem.addEventListener('click', function(){
+        if( elem.innerHTML == 'Follow'){
+            elem.innerHTML = 'Requested'
+            elem.style.backgroundColor = `rgba(69, 69, 69, 1)`;
+            setTimeout(() => {
+                
+                elem.innerHTML = 'Following'
+                elem.style.backgroundColor = `rgba(69, 69, 69, 1)`;
+            }, 400);
+        }
+        else{
+            elem.innerHTML  = 'Follow'
+            elem.style.backgroundColor = `rgba(37, 69, 183, 1)`;
+        }
+    })
+})
